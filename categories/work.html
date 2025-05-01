@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +11,22 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+        }
+
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 20px; /* Thin arrow size */
+            text-decoration: none;
+            color: grey; /* Make it grey */
+            font-weight: normal;
+            cursor: pointer;
+            font-family: Helvetica, sans-serif;
+        }
+
+        .back-arrow:hover {
+            color: black; /* Darker on hover */
         }
 
         .link-container {
@@ -73,6 +90,9 @@
     </style>
 </head>
 <body>
+
+    <!-- Back Arrow -->
+    <a href="javascript:history.back()" class="back-arrow">&#8592;</a>
 
     <div class="link-container">
         <div class="item">

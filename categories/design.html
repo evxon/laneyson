@@ -82,6 +82,19 @@
       color: black;
       margin-top: 30px;
       margin-bottom: 5px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .project-title::after {
+      content: " →";
+      color: grey;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .project-title:hover::after {
+      opacity: 1;
     }
 
     .project-description {

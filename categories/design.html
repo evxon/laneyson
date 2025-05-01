@@ -82,19 +82,6 @@
       color: black;
       margin-top: 30px;
       margin-bottom: 5px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .project-title::after {
-      content: " →";
-      color: grey;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-
-    .project-title:hover::after {
-      opacity: 1;
     }
 
     .project-description {
@@ -107,45 +94,64 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Back Arrow Styling */
+    .back-arrow {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      color: grey;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .back-arrow:hover {
+      color: black;
+    }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <!-- First project -->
-  <section class="embed-website-section">
-    <a href="https://evonson.github.io/iblametheworld/index.html" target="_blank">
-      <div class="image-wrapper">
-        <img src="../images/finalibw.png" alt="IBW Image" class="project-image">
-        <div class="overlay">Click to visit the site</div>
-      </div>
-    </a>
-    <div class="project-title">I Blame the World</div>
-    <p class="project-description">
-      This responsive website, inspired by Sasha Sloan's I Blame the World, explores how typography and design thoughtfully reflect the complexities of blaming the world instead of confronting it.
-    </p>
-    <p class="project-description">
-      사샤 슬론(Sasha Sloan)의 'I Blame the World'에서 영감을 받은 이 반응형 웹은 타이포그래피와 디자인을 통해 세상을 탓하는 대신 직면하는 과정을 표현합니다.
-    </p>
-  </section>
+  <!-- Back Arrow -->
+  <a href="javascript:history.back()" class="back-arrow">&#8592;</a>
 
-  <!-- Second project -->
-  <section class="figma-section">
-    <a href="https://www.figma.com/proto/ylfMz4Db8mXEwkzz5bBVgl/Interaction-Project-2?node-id=33-1433&starting-point-node-id=33%3A1433&t=fr1u27QFeDEsyaW6-1" target="_blank">
-      <div class="image-wrapper">
-        <img src="../images/chairoscope.png" alt="Chairoscope Image" class="project-image">
-        <div class="overlay">Click to visit the site</div>
-      </div>
-    </a>
-    <div class="project-title">Chairoscope</div>
-    <p class="project-description">
-      This calendar app pairs birthdays with chair designs tailored to users' personalities, creating a personalized experience that seamlessly combines functionality with aesthetic appeal.
-    </p>
-    <p class="project-description">
-      이 캘린더 웹사이트는 사용자의 생일에 맞춰 의자 디자인과 성격 설명을 연결해, 기능성과 미적 감각이 결합된 개인화된 경험을 제공합니다.
-    </p>
-  </section>
-</div>
+  <div class="container">
+    <!-- First project -->
+    <section class="embed-website-section">
+      <a href="https://evonson.github.io/iblametheworld/index.html" target="_blank">
+        <div class="image-wrapper">
+          <img src="../images/finalibw.png" alt="IBW Image" class="project-image">
+          <div class="overlay">Click to visit the site</div>
+        </div>
+      </a>
+      <div class="project-title">I Blame the World</div>
+      <p class="project-description">
+        This responsive website, inspired by Sasha Sloan's I Blame the World, explores how typography and design thoughtfully reflect the complexities of blaming the world instead of confronting it.
+      </p>
+      <p class="project-description">
+        사샤 슬론(Sasha Sloan)의 'I Blame the World'에서 영감을 받은 이 반응형 웹은 타이포그래피와 디자인을 통해 세상을 탓하는 대신 직면하는 과정을 표현합니다.
+      </p>
+    </section>
+
+    <!-- Second project -->
+    <section class="figma-section">
+      <a href="https://www.figma.com/proto/ylfMz4Db8mXEwkzz5bBVgl/Interaction-Project-2?node-id=33-1433&starting-point-node-id=33%3A1433&t=fr1u27QFeDEsyaW6-1" target="_blank">
+        <div class="image-wrapper">
+          <img src="../images/chairoscope.png" alt="Chairoscope Image" class="project-image">
+          <div class="overlay">Click to visit the site</div>
+        </div>
+      </a>
+      <div class="project-title">Chairoscope</div>
+      <p class="project-description">
+        This calendar app pairs birthdays with chair designs tailored to users' personalities, creating a personalized experience that seamlessly combines functionality with aesthetic appeal.
+      </p>
+      <p class="project-description">
+        이 캘린더 웹사이트는 사용자의 생일에 맞춰 의자 디자인과 성격 설명을 연결해, 기능성과 미적 감각이 결합된 개인화된 경험을 제공합니다.
+      </p>
+    </section>
+  </div>
 
 </body>
 </html>

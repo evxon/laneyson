@@ -18,6 +18,21 @@
       flex-direction: column; /* Allow stacking of content */
     }
 
+    .back-arrow {
+      position: fixed;
+      top: 20px;
+      left: 20px; /* Change to right: 20px; if you want top-right corner */
+      font-size: 24px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .back-arrow:hover {
+      color: grey;
+    }
+
     .link-container {
       display: flex;
       flex-direction: row; /* Align items horizontally */
@@ -104,6 +119,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Back arrow -->
+  <a href="javascript:history.back()" class="back-arrow">&#8592;</a>
 
   <div class="link-container">
 

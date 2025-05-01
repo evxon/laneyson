@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>evonson</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      transition: none !important;
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      width: 20px;
+      z-index: 10;
+    }
+
+    /* Explicitly set the hamburger bar color to gray */
+    .hamburger div {
+      height: 2px;
+      background-color: gray !important; /* Force color to gray */
+      margin: 4px 0;
+    }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      padding: 0;
+      border: none;
+      width: 100%;
+      z-index: 5;
+    }
+
+    /* Ensure nav-menu links have gray text */
+    .nav-menu a {
+      display: inline-block;
+      margin: 0;
+      padding: 0 15px;
+      text-decoration: none;
+      color: gray !important; /* Force color to gray */
+      font-size: 14px;
+      background: none;
+      border: none;
+      line-height: 1;
+      position: relative;
+      font-weight: normal;
+    }
+
+    .nav-menu.show {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      top: 30px;
+      left: 0;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:active {
+      background: none;
+      color: gray !important; /* Keep the color gray on hover/active */
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .name-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40vh;
+      transform: translateY(-50%);
+      height: auto;
+    }
+
+    .name-block .title-name {
+      font-size: 48px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .description {
+      font-size: 14px;
+      color: gray; /* Ensure description color is gray */
+      display: block;
+      margin-top: 2px;
+    }
+
+    .name-block .description:first-of-type {
+      margin-top: -10px;
+      margin-bottom: 16px;
+    }
+
+    .name-block .description:last-of-type {
+      margin-top: 2px;
+    }
+
+    .dojang-image {
+      margin-top: 20px;
+      width: 50px;
+      height: auto;
+    }
+  </style>
+</head>
+<body class="hover-effect-disabled no-scrollbar">
+  <!-- Hamburger menu icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Navigation menu links -->
+  <div class="nav-menu" id="navMenu">
+    <a href="categories/film.html">Film</a>
+    <a href="categories/design.html">Designs</a>
+    <a href="categories/work.html">Artworks</a>
+    <a href="categories/photography.html">Photography</a>
+  </div>
+
+  <!-- Centered content block -->
+  <div class="name-block">
+    <span class="description">Evon Son 손은비</span>
+    <span class="description">Parsons School of Design Communication Major Film Production Minor</span>
+    <span class="description">contact: evonlaneyson@gmail.com</span>
+
+    <!-- Dojang image -->
+    <img src="images/dojang.png" alt="Dojang Image" class="dojang-image" />
+  </div>
+
+  <script>
+    // Function to toggle the menu visibility
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('show'); // Toggle the visibility of the nav menu
+      localStorage.setItem('menuState', menu.classList.contains('show') ? 'open' : 'closed');
+    }
+
+    // Check the saved menu state on page load
+    window.onload = function () {
+      const savedState = localStorage.getItem('menuState');
+      if (savedState === 'open') {
+        const menu = document.getElementById('navMenu');
+        menu.classList.add('show');
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* Paragraph styling */
+p {
+    font-family: Helvetica, sans-serif;  /* Set font */
+    font-weight: bold;  /* Make text bold */
+    text-align: center;  /* Center the text horizontally */
+    background-color: #FFFFFF;  /* Set background color to white */
+    font-size: 45px;  /* Set font size */
+    color: #000000;  /* Set text color to black */
+    text-decoration: none;  /* Remove any underline or decoration */
+}
+
+/* Link styling */
+a {
+    font-family: Helvetica, sans-serif;  /* Set font */
+    font-weight: bold;  /* Make text bold */
+    text-align: center;  /* Center the text horizontally */
+    background-color: #FFFFFF;  /* Set background color to white */
+    font-size: 10px;  /* Set font size */
+    color: #000000;  /* Set text color to black */
+    text-decoration: none;  /* Remove any underline or decoration */
+    
+    /* Flexbox for centering text vertically and horizontally */
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;  /* Vertically center */
+    height: 30vh;  /* Full height of the viewport */
+    width: 100%;  /* Full width of the viewport */
+    margin: 0;  /* Reset default margin */
+    padding: 0;  /* Remove padding */
+}
+
+/* Styling for images inside links */
+a img {
+    position: relative;  /* Position image relative to its normal position */
+    width: 100px;  /* Set image width */
+    top: -130px; /* Adjust vertical position */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Image hover effect (increase size on hover) */
+a img:hover {
+    transform: scale(1.2); /* Increase the size of the image by 20% */
+}
+
+/* Heading styles for h1, h2, and h3 */
+h1, h2, h3 {
+    font-family: Helvetica, sans-serif;  /* Set font */
+    font-weight: bold;  /* Make text bold */
+
+    /* Flexbox for centering text vertically and horizontally */
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;  /* Vertically center */
+    margin: 25px;  /* Margin around headings */
+    padding: 10px;  /* Padding around headings */
+}
+
+/* Link active and visited state */
+a {
+    color: black !important;  /* Set color to black */
+    text-decoration: none !important;  /* Remove decoration */
+}
+
+a:visited {
+    color: black !important;  /* Set color to black for visited links */
+    text-decoration: none !important;  /* Remove decoration for visited links */
+}
+
+a:hover {
+    color: #000000 !important;  /* Set color to black when hovered */
+    text-decoration: none !important;  /* Remove decoration when hovered */
+}
+
+a:active {
+    color: black !important;  /* Set color to black when clicked */
+    text-decoration: none !important;  /* Remove decoration when clicked */
+}
+
+/* Hover effect for links with the class 'hover-effect-enabled' */
+.hover-effect-enabled a {
+    font-size: 50px;  /* Increase font size */
+    transition: font-size 0.3s ease;  /* Smooth transition for font size change */
+}
+
+.hover-effect-enabled a:hover {
+    font-size: 70px;  /* Increase font size on hover */
+}
+
+/* Prevent scrolling for the body with the class 'no-scrollbar' */
+.no-scrollbar {
+    overflow: hidden;  /* Hide overflow (no scrolling) */
+    margin: 0;  /* Reset margin */
+    padding: 240px;  /* Add padding around the body */
+}
+
+/* Hover effect for h1, h2, and h3 within 'hover-effect-enabled' class */
+.hover-effect-enabled h1, .hover-effect-enabled h2, .hover-effect-enabled h3 {
+    font-size: 50px;  /* Set initial font size */
+    transition: font-size 0.3s ease;  /* Smooth transition for font size change */
+}
+
+.hover-effect-enabled h1:hover, .hover-effect-enabled h2:hover, .hover-effect-enabled h3:hover {
+    font-size: 70px;  /* Increase font size on hover */
+}
+
+/* No hover effect for h1, h2, h3 within 'hover-effect-disabled' class */
+.hover-effect-disabled h1, .hover-effect-disabled h2, .hover-effect-disabled h3 {
+    font-size: 50px;  /* Set font size */
+    /* No transition or hover effect for this page */
+}
+
+/* Adjust paragraph margin and font size */
+p {
+    margin-top: -190px; /* Adjust this value as needed */
+    font-size: 2.3rem;  /* Set font size */
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Adjust body padding for smaller screens */
+    body {
+        padding: 10px;  /* Add padding for smaller screens */
+    }
+
+    /* Adjust heading font size for smaller screens */
+    h1, h2, h3 {
+        font-size: 30px;  /* Smaller font size */
+        margin: 10px;  /* Adjust margin */
+        padding: 5px;  /* Adjust padding */
+    }
+
+    /* Adjust link font size and layout */
+    a {
+        font-size: 12px;  /* Smaller font size */
+        height: auto;  /* Remove fixed height */
+        padding: 20px 0;  /* Add some padding for easier tapping */
+        margin-bottom: 10px;  /* Space between links */
+    }
+
+    /* Ensure images scale appropriately */
+    img {
+        max-width: 100%;  /* Ensure images don't exceed container width */
+        height: auto;  /* Adjust image height proportionally */
+    }
+
+    /* Adjust paragraph font size for mobile */
+    p {
+        font-size: 30px;  /* Smaller font size for mobile */
+        padding: 10px;  /* Adjust padding */
+    }
+
+    /* Prevent overflowing content */
+    .no-scrollbar {
+        padding: 40px;  /* Reduce padding for mobile */
+    }
+}

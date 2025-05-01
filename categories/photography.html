@@ -1,161 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Photography</title>
-  <link rel="stylesheet" href="../style.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-    body {
-      font-family: Helvetica, sans-serif;
-      background-color: white;
-      overflow: hidden;
-    }
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 20px; /* Thin arrow size */
+            text-decoration: none;
+            color: grey; /* Make it grey */
+            font-weight: normal;
+            cursor: pointer;
+            font-family: Helvetica, sans-serif;
+        }
 
-    .gallery-container {
-      display: flex;
-      overflow-x: auto;
-      white-space: nowrap;
-      height: 100vh;
-      align-items: center;
-      padding: 2rem;
-      scroll-snap-type: x mandatory;
-      position: relative;
-    }
+        .back-arrow:hover {
+            color: black; /* Darker on hover */
+        }
 
-    .image-wrapper {
-      flex: 0 0 auto;
-      margin-right: 1rem;
-      scroll-snap-align: center;
-      width: 300px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* Keeps content aligned left */
-    }
+        .gallery-container {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            height: 100vh;
+            align-items: center;
+            padding: 2rem;
+            scroll-snap-type: x mandatory;
+            position: relative;
+        }
 
-    .gallery-image {
-      width: 100%;
-      height: auto;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      z-index: 1;
-    }
+        .image-wrapper {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+            scroll-snap-align: center;
+            width: 300px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-    /* Initially hide the description */
-    .image-description {
-      font-family: Helvetica, sans-serif;
-      font-size: 14px;
-      color: #666666;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      position: absolute;
-      left: 0; /* Align description to the left */
-      bottom: -150px; /* Adjust this distance */
-      text-align: left; /* Ensures the text inside the description is left-aligned */
-      width: auto; /* Make sure it adapts to content width */
-      max-width: 100%; /* Prevents overflow */
-      white-space: normal; /* Allows wrapping of the description */
-      padding-left: 10px; /* Optional: Adds padding to the left of the description */
-    }
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            z-index: 1;
+        }
 
-    /* Adjust description positions for each image */
-    .image-wrapper:nth-child(1) .image-description {
-      bottom: -220px;
-      left: -30px;
-    }
+        .image-description {
+            font-family: Helvetica, sans-serif;
+            font-size: 14px;
+            color: #666666;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: absolute;
+            left: 0;
+            bottom: -150px;
+            text-align: left;
+            width: auto;
+            max-width: 100%;
+            white-space: normal;
+            padding-left: 10px;
+        }
 
-    .image-wrapper:nth-child(2) .image-description {
-      bottom: -220px;
-      left: -250px;
-    }
+        .image-wrapper:hover .gallery-image {
+            transform: scale(2.6);
+            z-index: 2;
+        }
 
-    .image-wrapper:nth-child(3) .image-description {
-      bottom: -220px;
-      left: -250px;
-    }
+        .image-wrapper:hover .image-description {
+            opacity: 1;
+        }
 
-    .image-wrapper:nth-child(4) .image-description {
-      bottom: -220px;
-      left: -250px;
-    }
+        .gallery-container::-webkit-scrollbar {
+            height: 10px;
+        }
 
-    .image-wrapper:nth-child(5) .image-description {
-      bottom: -220px;
-      left: -250px;
-    }
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 5px;
+        }
 
-    .image-wrapper:nth-child(6) .image-description {
-      bottom: -220px;
-      left: -250px;
-    }
-
-    /* Enlarging effect */
-    .image-wrapper:hover .gallery-image {
-      transform: scale(2.6);
-      z-index: 2;
-    }
-
-    /* Show description when hovering */
-    .image-wrapper:hover .image-description {
-      opacity: 1;
-    }
-
-    .gallery-container::-webkit-scrollbar {
-      height: 10px;
-    }
-
-    .gallery-container::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 5px;
-    }
-
-    /* Scroll text in the bottom left corner */
-    .scroll-text {
-      position: absolute;
-      bottom: 10px;
-      left: 30px;  /* Adjusted to move the text to the right */
-      font-size: 14px;
-      color: #888;
-      font-style: italic;
-    }
-  </style>
+        .scroll-text {
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-  <div class="gallery-container">
-    <div class="image-wrapper">
-      <img src="../images/IMG_2845.JPG" alt="Bridge 2" class="gallery-image" />
-      <div class="image-description">breathe (2023)</div>
-    </div>
-    <div class="image-wrapper">
-      <img src="../images/IMG_0693.JPG" alt="1305" class="gallery-image" />
-      <div class="image-description">Once a Year (2023)</div>
-    </div>
-    <div class="image-wrapper">
-      <img src="../images/sia.png" alt="sia" class="gallery-image" />
-      <div class="image-description">This Is Where the Fun Stuff Happens (2023)</div>
-    </div>
-    <div class="image-wrapper">
-      <img src="../images/cow.png" alt="cow" class="gallery-image" />
-      <div class="image-description">Celebrating in the Green Fields (2023)</div>
-    </div>
-    <div class="image-wrapper">
-      <img src="../images/IMG_2595.JPG" alt="2595" class="gallery-image" />
-      <div class="image-description">Growth (2023)</div>
-    </div>
-    <div class="image-wrapper">
-      <img src="../images/IMG_0269.JPG" alt="0770" class="gallery-image" />
-      <div class="image-description">3:15pm (2023)</div>
-    </div>
+    <a href="javascript:history.back()" class="back-arrow">&#8592;</a>
 
-    <!-- Scroll text -->
-    <div class="scroll-text">Scroll →</div>
-  </div>
+    <div class="gallery-container">
+        <div class="image-wrapper">
+            <img src="../images/IMG_2845.JPG" alt="Bridge 2" class="gallery-image" />
+            <div class="image-description">breathe (2023)</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="../images/IMG_0693.JPG" alt="1305" class="gallery-image" />
+            <div class="image-description">Once a Year (2023)</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="../images/sia.png" alt="sia" class="gallery-image" />
+            <div class="image-description">This Is Where the Fun Stuff Happens (2023)</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="../images/cow.png" alt="cow" class="gallery-image" />
+            <div class="image-description">Celebrating in the Green Fields (2023)</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="../images/IMG_2595.JPG" alt="2595" class="gallery-image" />
+            <div class="image-description">Growth (2023)</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="../images/IMG_0269.JPG" alt="0770" class="gallery-image" />
+            <div class="image-description">3:15pm (2023)</div>
+        </div>
+
+        <div class="scroll-text">Scroll →</div>
+    </div>
 </body>
 </html>

@@ -145,15 +145,19 @@
     function toggleMenu() {
       const menu = document.getElementById('navMenu');
       menu.classList.toggle('show'); // Toggle the visibility of the nav menu
-      localStorage.setItem('menuState', menu.classList.contains('show') ? 'open' : 'closed');
+      sessionStorage.setItem('menuState', menu.classList.contains('show') ? 'open' : 'closed');
     }
 
     // Check the saved menu state on page load
     window.onload = function () {
-      const savedState = localStorage.getItem('menuState');
+      const savedState = sessionStorage.getItem('menuState');
+      const menu = document.getElementById('navMenu');
+      
+      // If it's the first load or the menuState is not 'open', close the menu
       if (savedState === 'open') {
-        const menu = document.getElementById('navMenu');
         menu.classList.add('show');
+      } else {
+        menu.classList.remove('show');
       }
     };
   </script>

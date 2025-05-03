@@ -70,9 +70,28 @@
             width: 70%; /* Adjust the width of the last image */
         }
 
+        /* Back Arrow Styling */
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 20px;
+            text-decoration: none;
+            color: grey;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .back-arrow:hover {
+            color: black;
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Back Arrow -->
+    <a href="javascript:history.back()" class="back-arrow">&#8592;</a>
 
     <div class="link-container">
         <div class="item">

@@ -19,6 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
 
     .gallery-container {
@@ -65,9 +66,30 @@
     .image-wrapper:hover .image-description {
       opacity: 1;
     }
+
+    /* Back Arrow Button Styling */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: #888; /* Gray color */
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .back-button:hover {
+      color: #555; /* Darker gray on hover */
+    }
   </style>
 </head>
 <body>
+
+  <!-- Back Arrow Button -->
+  <button class="back-button" onclick="window.history.back();">←</button>
+
   <div class="gallery-container">
     <div class="image-wrapper">
       <img src="../images/IMG_2845.JPG" alt="Bridge 2" class="gallery-image" />
@@ -94,5 +116,6 @@
       <div class="image-description">3:15pm (2023)</div>
     </div>
   </div>
+
 </body>
 </html>

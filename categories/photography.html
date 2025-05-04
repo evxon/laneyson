@@ -15,75 +15,99 @@
     body {
       font-family: Helvetica, sans-serif;
       background-color: white;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      margin: 0;
     }
 
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5px; /* smaller gap */
-      padding: 20px;
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       background-color: white;
+      margin-bottom: 50px; /* Apply general gap between sections */
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      background: none;
+      border: none;
+      color: #888;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      color: #555;
     }
 
     .image-wrapper {
-      width: 400px; /* bigger size */
-      height: 300px;
+      width: 60vw; /* default size for all images */
+      height: auto;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .gallery-image {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       transition: transform 0.3s ease;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* soft shadow */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .image-description {
       font-family: Helvetica, sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       color: #333;
       background-color: rgba(255, 255, 255, 0.8);
-      padding: 2px 6px;
+      padding: 4px 8px;
       position: absolute;
-      bottom: 6px;
-      left: 6px;
+      bottom: 20px;
+      left: 20px;
       opacity: 0;
       transition: opacity 0.3s ease;
       border-radius: 4px;
     }
 
     .image-wrapper:hover .gallery-image {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
 
     .image-wrapper:hover .image-description {
       opacity: 1;
     }
 
-    /* Back Arrow Button Styling */
-    .back-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 20px; /* Adjusted font size */
-      font-weight: bold; /* Thicker arrow */
-      background: none;
-      border: none;
-      color: #888; /* Gray color */
-      cursor: pointer;
-      transition: color 0.3s ease;
+    /* Make the last image smaller */
+    .small-image {
+      width: 40vw; /* Adjust to desired smaller size */
+      margin-bottom: 0; /* Ensure no extra space at the bottom */
     }
 
-    .back-button:hover {
-      color: #555; /* Darker gray on hover */
+    /* Remove description for the last image */
+    .small-image .image-description {
+      display: none;
     }
+
+    /* Ensure no margin or padding for the last section */
+    .gallery-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    /* Add more gap between the second-to-last and last sections */
+    .gallery-section:nth-last-child(2) {
+      margin-bottom: 100px; /* Adjust this value to add more space */
+    }
+
   </style>
 </head>
 <body>
@@ -91,32 +115,68 @@
   <!-- Back Arrow Button -->
   <button class="back-button" onclick="window.history.back();">←</button>
 
-  <div class="gallery-container">
+  <!-- First Section -->
+  <section class="gallery-section">
     <div class="image-wrapper">
       <img src="../images/IMG_2845.JPG" alt="Bridge 2" class="gallery-image" />
       <div class="image-description">breathe (2023)</div>
     </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="gallery-section">
     <div class="image-wrapper">
       <img src="../images/IMG_0693.JPG" alt="1305" class="gallery-image" />
       <div class="image-description">Once a Year (2023)</div>
     </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="gallery-section">
     <div class="image-wrapper">
       <img src="../images/sia.png" alt="sia" class="gallery-image" />
       <div class="image-description">This Is Where the Fun Stuff Happens (2023)</div>
     </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="gallery-section">
     <div class="image-wrapper">
       <img src="../images/cow.png" alt="cow" class="gallery-image" />
       <div class="image-description">Celebrating in the Green Fields (2023)</div>
     </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="gallery-section">
     <div class="image-wrapper">
       <img src="../images/IMG_2595.JPG" alt="2595" class="gallery-image" />
       <div class="image-description">Growth (2023)</div>
     </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="gallery-section">
     <div class="image-wrapper">
       <img src="../images/IMG_0269.JPG" alt="0770" class="gallery-image" />
       <div class="image-description">3:15pm (2023)</div>
     </div>
-  </div>
+  </section>
+
+  <!-- Section 7 (Smaller Image) -->
+  <section class="gallery-section">
+    <div class="image-wrapper small-image">
+      <img src="../images/DSC09853.JPG" alt="DSC09853" class="gallery-image" />
+      <div class="image-description">New Image Description (2023)</div>
+    </div>
+  </section>
+
+  <!-- Section 8 (New Image) -->
+  <section class="gallery-section">
+    <div class="image-wrapper small-image">
+      <img src="../images/d.png" alt="d image" class="gallery-image" />
+    </div>
+  </section>
 
 </body>
 </html>

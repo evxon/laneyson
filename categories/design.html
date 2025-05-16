@@ -18,17 +18,22 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 40px;
+      padding: 20px;
+      flex-direction: column;
+      font-size: 13px;
     }
 
     .container {
       display: flex;
       flex-direction: row;
-      gap: 180px;
-      max-width: 1000px;
+      gap: 90px;
+      max-width: 900px;
       width: 100%;
       justify-content: center;
       align-items: flex-start;
+      flex-wrap: wrap;
+      transform: scale(0.95);
+      transform-origin: top center;
     }
 
     section {
@@ -36,19 +41,20 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
-      max-width: 360px;
+      max-width: 280px;
       text-align: left;
     }
 
     .image-wrapper {
       position: relative;
       width: 90%;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       cursor: pointer;
     }
 
     .project-image {
       width: 100%;
+      max-height: 180px;
       height: auto;
       border: 1px solid #ccc;
       transition: transform 0.2s ease;
@@ -70,7 +76,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 13px;
       opacity: 0;
       transition: opacity 0.3s ease;
       text-align: center;
@@ -78,17 +84,17 @@
     }
 
     .project-title {
-      font-size: 14px;
+      font-size: 13px;
       color: black;
-      margin-top: 30px;
-      margin-bottom: 5px;
+      margin-top: 15px;
+      margin-bottom: 3px;
     }
 
     .project-description {
-      font-size: 12px;
+      font-size: 11px;
       color: #555;
-      line-height: 1.6;
-      margin-top: 22px;
+      line-height: 1.4;
+      margin-top: 12px;
     }
 
     html {
@@ -120,7 +126,7 @@
   <div class="container">
     <!-- First project -->
     <section class="embed-website-section">
-      <a href="https://evonson.github.io/iblametheworld/index.html" target="_blank">
+      <a href="https://evonson.github.io/iblametheworld/index.html" target="_blank" rel="noopener noreferrer">
         <div class="image-wrapper">
           <img src="../images/finalibw.png" alt="IBW Image" class="project-image" />
           <div class="overlay">Click to visit the site</div>
@@ -137,7 +143,7 @@
 
     <!-- Second project -->
     <section class="figma-section">
-      <a href="https://www.figma.com/proto/ylfMz4Db8mXEwkzz5bBVgl/Interaction-Project-2?node-id=33-1433&starting-point-node-id=33%3A1433&t=fr1u27QFeDEsyaW6-1" target="_blank">
+      <a href="https://www.figma.com/proto/ylfMz4Db8mXEwkzz5bBVgl/Interaction-Project-2?node-id=33-1433&starting-point-node-id=33%3A1433&t=fr1u27QFeDEsyaW6-1" target="_blank" rel="noopener noreferrer">
         <div class="image-wrapper">
           <img src="../images/chairoscope.png" alt="Chairoscope Image" class="project-image" />
           <div class="overlay">Click to visit the site</div>
@@ -152,11 +158,11 @@
       </p>
     </section>
 
-    <!-- Third project (duplicate of second) -->
+    <!-- Third project -->
     <section class="figma-section">
-      <a href="https://www.figma.com/proto/ylfMz4Db8mXEwkzz5bBVgl/Interaction-Project-2?node-id=33-1433&starting-point-node-id=33%3A1433&t=fr1u27QFeDEsyaW6-1" target="_blank">
+      <a href="https://www.figma.com/proto/ylfMz4Db8mXEwkzz5bBVgl/Interaction-Project-2?node-id=33-1433&starting-point-node-id=33%3A1433&t=fr1u27QFeDEsyaW6-1" target="_blank" rel="noopener noreferrer">
         <div class="image-wrapper">
-          <img src="../images/bad drivers.png" alt="Chairoscope Image" class="project-image" />
+          <img src="../images/bad drivers.png" alt="Bad Drivers Image" class="project-image" />
           <div class="overlay">Click to visit the site</div>
         </div>
       </a>
@@ -166,6 +172,23 @@
       </p>
       <p class="project-description">
         이 웹사이트는 운전을 잘 못하는 사람들을 위한 커뮤니티입니다. 사진과 이야기를 올려 자신의 운전 경험을 공유할 수 있는 공간입니다.
+      </p>
+    </section>
+
+    <!-- Fourth project: Dinosaur -->
+    <section class="figma-section">
+      <a href="https://drive.google.com/file/d/1LVfOyiZW8Y4EDEJKGRq0YNLI7NrVcLAp/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <div class="image-wrapper">
+          <img src="../images/dinosaur.png" alt="Dinosaur Image" class="project-image" />
+          <div class="overlay">Click to visit the site</div>
+        </div>
+      </a>
+      <div class="project-title">Dinosaur</div>
+      <p class="project-description">
+        This is book design that turns a Wikipedia article into a printed, typographic experience. I used grids and modern fonts to make the dinosaur article easy and engaging to read.
+      </p>
+      <p class="project-description">
+        이 프로젝트는 위키피디아 글을 인쇄된 책으로 재구성해 타이포그래피로 표현하는 작업입니다.
       </p>
     </section>
   </div>

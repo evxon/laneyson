@@ -37,40 +37,39 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-bottom: 20px; /* Uniform margin between items */
+            margin-bottom: 20px;
         }
 
         .video-image, .dinosaur-image, .larger-image {
-            width: 50%; /* Control image size */
+            width: 50%;
             height: auto;
             object-fit: contain;
             display: block;
-            margin-left: auto;  /* Align to the right */
-            margin-right: auto; /* Align to the left */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .dinosaur-image {
-            width: 50%; /* Ensure consistency */
+            width: 50%;
         }
 
         .larger-image {
-            width: 60%; /* Slightly larger for certain images */
+            width: 60%;
         }
 
         .caption {
             font-size: 0.8em;
             color: gray;
-            margin-top: 15px; /* Consistent space between image and caption */
+            margin-top: 15px;
             width: 100%;
             text-align: center;
         }
 
-        /* Make only the last image a little bit bigger */
+        /* Make only the last image smaller */
         .link-container .item:last-child .dinosaur-image {
-            width: 70%; /* Adjust the width of the last image */
+            width: 30%;
         }
 
-        /* Back Arrow Styling */
         .back-arrow {
             position: fixed;
             top: 20px;
@@ -85,7 +84,6 @@
         .back-arrow:hover {
             color: black;
         }
-
     </style>
 </head>
 <body>
@@ -119,11 +117,11 @@
             <div class="caption">Dinosaur Sketch (2022)</div>
         </div>
         <div class="item">
-            <img src="../images/67 (1).png" alt="Symbiosis 2" class="dinosaur-image">
+            <img src="../images/67 (1).png" alt="When I Was a Dinosaur" class="dinosaur-image">
             <div class="caption">When I Was a Dinosaur (2022)</div>
         </div>
         <div class="item">
-            <img src="../images/작품 1.jpg" alt="Symbiosis 2" class="dinosaur-image">
+            <img src="../images/작품 1.jpg" alt="五年似乎像一整个生命故事" class="dinosaur-image">
             <div class="caption">五年似乎像一整个生命故事 (2023)</div>
         </div>
     </div>

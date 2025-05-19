@@ -11,20 +11,27 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Helvetica, sans-serif;
       background-color: white;
       min-height: 100vh;
       padding: 20px;
       font-size: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow-x: auto;
     }
 
     .container {
       display: flex;
       flex-direction: row;
-      gap: 120px; /* Increased gap between items */
-      justify-content: flex-start;
+      gap: 120px;
+      justify-content: center;
       align-items: flex-start;
       flex-wrap: nowrap;
       width: max-content;
@@ -90,10 +97,6 @@
       margin-top: 12px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     .back-arrow {
       position: fixed;
       top: 20px;
@@ -103,6 +106,7 @@
       color: grey;
       font-weight: normal;
       cursor: pointer;
+      z-index: 1000;
     }
 
     .back-arrow:hover {
@@ -112,7 +116,7 @@
 </head>
 <body>
 
-  <!-- Back Arrow -->
+  <!-- Back Arrow Only -->
   <a href="javascript:history.back()" class="back-arrow">&#8592;</a>
 
   <div class="container">
